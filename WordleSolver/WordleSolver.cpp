@@ -31,7 +31,6 @@ int main()
         quit = (temp == "q");
     }
     cout << "Thanks for playing" << endl;
-    return 0;
 }
 
 
