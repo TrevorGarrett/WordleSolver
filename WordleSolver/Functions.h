@@ -15,3 +15,14 @@ void PlayConsoleGame();
 
 
 // Solver Functions
+#include <iostream>
+
+using namespace std;
+
+int val;
+
+cin >> val
+
+int print(val) {
+	cout << val << endl;
+}
