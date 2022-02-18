@@ -19,7 +19,7 @@ int main()
         }
         switch (mode) {
         case CONSOLE_MODE:
-            PlayConsoleGame();
+            playConsoleGame();
             break;
         case OFFICIAL_MODE: // Official game
 
