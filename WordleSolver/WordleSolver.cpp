@@ -24,10 +24,11 @@ int main()
         }
         switch (mode) {
         case CONSOLE_MODE:
-            #if DEBUG_MODE == 1
-               PrintMap();
-            #endif // DEBUG_MODE 
             assignMap(contains);
+            #if DEBUG_MODE == 1
+               printMap(contains);
+            #endif // DEBUG_MODE 
+;
             playConsoleGame();
             break;
         case OFFICIAL_MODE: // Official game

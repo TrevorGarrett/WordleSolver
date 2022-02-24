@@ -19,7 +19,7 @@ void helloWorld()
 	cout << "Hello World!" << endl;
 }
 
-void assignMap (map <char, vector <string>> & contains) {
+void assignMap (map <char, vector <string>> &contains) {
 	set <char> letters;
 	string word;
 	ifstream words("Words.txt");
@@ -43,7 +43,7 @@ void assignMap (map <char, vector <string>> & contains) {
 }
 
 
-void printMap() {
+void printMap(map <char, vector <string>> &contains) {
 	cout << contains['a'].size() << endl;
 	for (int i = 0; i < contains.size(); i++)
 	{
