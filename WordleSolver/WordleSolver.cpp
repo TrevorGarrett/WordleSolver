@@ -6,6 +6,8 @@
 #include "defines.h"
 #include "Functions.h"
 using namespace std;
+#define DEBUG_MODE 0
+
 
 int main()
 {
@@ -20,7 +22,10 @@ int main()
         switch (mode) {
         case CONSOLE_MODE:
             assignMap();
-            printMap();
+            #if DEBUG_MODE == 1
+               PrintMap();
+            #endif // DEBUG_MODE 
+
             playConsoleGame();
             break;
         case OFFICIAL_MODE: // Official game
