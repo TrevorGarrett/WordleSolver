@@ -19,6 +19,8 @@ int main()
         }
         switch (mode) {
         case CONSOLE_MODE:
+            assignMap();
+            printMap();
             playConsoleGame();
             break;
         case OFFICIAL_MODE: // Official game

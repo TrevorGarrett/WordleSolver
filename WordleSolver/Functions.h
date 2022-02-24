@@ -17,3 +17,5 @@ void playConsoleGame();
 
 
 // Solver Functions
+void assignMap();
+void printMap();
