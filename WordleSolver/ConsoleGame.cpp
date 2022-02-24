@@ -9,6 +9,7 @@
 using namespace std;
 
 string generateAnswer() {
+
 	return "oasis"; // FIXME generate answer randomly from dictionary
 }
 
