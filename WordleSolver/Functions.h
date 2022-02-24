@@ -1,5 +1,5 @@
 #pragma once
-#include <map>
+#include <unordered_map>
 #include <vector>
 
 
@@ -9,8 +9,8 @@
 
 // ====Console Game Functions====
 
-// Top level function to play Console Game
-void playConsoleGame();
+// Top level function to play Console Game, map will be passed to solver to be modified if in solver mode.
+void playConsoleGame(std::unordered_map <char, std::vector<std::string>> &contains); 
 
 
 
@@ -20,5 +20,6 @@ void playConsoleGame();
 
 
 // Solver Functions
-void assignMap(std::map <char, std::vector <std::string>> &contains); //takes in map and modifies it by assigning words in Words.txt to map
-void printMap(std::map <char, std::vector <std::string>> &contains);
+void Solver(std::string guess, std::vector <int> result, std::unordered_map <char, std::vector <std::string>>& contains);
+void assignMap(std::unordered_map <char, std::vector <std::string>> &contains); //takes in map and modifies it by assigning words in Words.txt to map
+void printMap(std::unordered_map <char, std::vector <std::string>> &contains);

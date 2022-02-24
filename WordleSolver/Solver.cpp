@@ -2,12 +2,10 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <map>
+#include <unordered_map>
 #include <set>
 #include "Defines.h"
 #include "Functions.h"
- 
-using namespace std;
 
 //string solver(vector <int> result) {
 //	contains[word[0]].push_back(word)
@@ -16,16 +14,16 @@ using namespace std;
 
 void helloWorld()
 {
-	cout << "Hello World!" << endl;
+	std::cout << "Hello World!" << std::endl;
 }
 
-void assignMap (map <char, vector <string>> &contains) {
-	set <char> letters;
-	string word;
-	ifstream words("Words.txt");
+void assignMap (std::unordered_map <char, std::vector <std::string>> &contains) {
+	std::set <char> letters;
+	std::string word;
+	std::ifstream words("Words.txt");
 	if (words.is_open())
 	{
-		while (getline(words, word))
+		while (std::getline(words, word))
 		{
 			for (int i = 0; i < 5; i++)
 			{
@@ -39,22 +37,22 @@ void assignMap (map <char, vector <string>> &contains) {
 		}
 		words.close();
 	}
-	else cout << "Unable to open file" << endl;
+	else std::cout << "Unable to open file" << std::endl;
 }
 
 
-void printMap(map <char, vector <string>> &contains) {
-	cout << contains['a'].size() << endl;
-	for (int i = 0; i < contains.size(); i++)
+void printMap(std::unordered_map <char, std::vector <std::string>> &contains) {
+	std::cout << contains['a'].size() << std::endl;
+	for (auto bucket : contains)
 	{
-		cout <<  endl;
-		for (int j = 0; j < contains[i].size(); j++) {
-			cout << contains[i][j] << endl;
+		std::cout << std::endl;
+		for (auto word : bucket.second) {
+			std::cout << word << std::endl;
 		}
 	}
 }
 
-void Solver(vector <int> result, map <char, vector <string>>& contains) {
-	cout << "Stuff's broke";
+void Solver(std::string guess, std::vector <int> result, std::unordered_map <char, std::vector <std::string>>& contains) {
+	std::cout << "Stuff's broke";
 }
 
