@@ -53,3 +53,8 @@ void printMap(map <char, vector <string>> &contains) {
 		}
 	}
 }
+
+void Solver(vector <int> result, map <char, vector <string>>& contains) {
+	cout << "Stuff's broke";
+}
+

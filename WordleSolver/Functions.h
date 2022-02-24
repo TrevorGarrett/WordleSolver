@@ -2,6 +2,7 @@
 #include <map>
 #include <vector>
 
+
 // Generic Functions
 
 
@@ -19,5 +20,5 @@ void playConsoleGame();
 
 
 // Solver Functions
-void assignMap(std::map <char, vector <string>> &contains); //takes in map and modifies it by assigning words in Words.txt to map
-void printMap(std::map <char, vector <string>> &contains);
+void assignMap(std::map <char, std::vector <std::string>> &contains); //takes in map and modifies it by assigning words in Words.txt to map
+void printMap(std::map <char, std::vector <std::string>> &contains);
