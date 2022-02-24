@@ -3,12 +3,15 @@
 
 #include <iostream>
 #include <string>
+#include <map>
+#include <vector>
 #include "defines.h"
 #include "Functions.h"
 using namespace std;
 
 int main()
 {
+    map <char, vector <string>> contains;
     bool quit = false;
     int mode;
     while (!quit) {
@@ -19,7 +22,7 @@ int main()
         }
         switch (mode) {
         case CONSOLE_MODE:
-            assignMap();
+            assignMap(contains);
             printMap();
             playConsoleGame();
             break;

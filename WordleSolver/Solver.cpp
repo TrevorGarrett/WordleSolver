@@ -9,8 +9,6 @@
  
 using namespace std;
 
-map <char, vector <string>> contains;
-
 //string solver(vector <int> result) {
 //	contains[word[0]].push_back(word)
 //}
@@ -21,7 +19,7 @@ void helloWorld()
 	cout << "Hello World!" << endl;
 }
 
-void assignMap () {
+void assignMap (map <char, vector <string>> & contains) {
 	set <char> letters;
 	string word;
 	ifstream words("Words.txt");
@@ -31,7 +29,7 @@ void assignMap () {
 		{
 			for (int i = 0; i < 5; i++)
 			{
-				if (letters.count(word[i])) 
+				if (!letters.count(word[i])) 
 				{
 					letters.insert(word[i]);
 					contains[word[i]].push_back(word);

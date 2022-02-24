@@ -17,5 +17,5 @@ void playConsoleGame();
 
 
 // Solver Functions
-void assignMap();
+void assignMap(map <char, vector <string>> & contains); //takes in map and modifies it by assigning words in Words.txt to map
 void printMap();
