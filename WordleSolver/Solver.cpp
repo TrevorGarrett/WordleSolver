@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <set>
+#include <random>
 #include "Defines.h"
 #include "Functions.h"
  
@@ -54,7 +55,21 @@ void printMap(map <char, vector <string>> &contains) {
 	}
 }
 
-void Solver(vector <int> result, map <char, vector <string>>& contains) {
-	cout << "Stuff's broke";
+void solver(vector <int> result, map <char, vector <string>>& contains) {
+	cout << "Stuff's broke" << endl;
 }
 
+int randNum(int rollMax) {
+	random_device dev;
+	mt19937 rng(dev());
+	uniform_int_distribution<mt19937::result_type> dist(0, rollMax);
+	return dist(rng);
+}
+
+string guess(vector <char> & viableLetters, map <char, vector<string>> & contains) {
+	string guess = "";
+	char rand1 = viableLetters[randNum(viableLetters.size())];
+	int rand2 = randNum(contains[rand1].size());
+	guess = contains[rand1][rand2];
+	return guess;
+}

@@ -16,6 +16,11 @@ int main()
     map <char, vector <string>> contains;
     bool quit = false;
     int mode;
+    string alphabet = "abcdefghijklmnopqrstuvwxyz"; // List of letters to initiate vector of allowable letters
+    vector <char> viableLetters; // vector of allowable letters.  This vector will be edited to remove letters no found in words to allow for the random guesser to pick words that adhere to any omissions made
+    for (int i = 0; i < alphabet.length(); i++) {
+        viableLetters.push_back(alphabet[i]);
+    }
     while (!quit) {
         mode = -1;
         while (mode != 1 && mode != 2) {
@@ -25,6 +30,7 @@ int main()
         switch (mode) {
         case CONSOLE_MODE:
             assignMap(contains);
+            //cout << guess(viableLetters, contains);
             #if DEBUG_MODE == 1
                printMap(contains);
             #endif // DEBUG_MODE 
