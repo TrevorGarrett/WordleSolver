@@ -53,20 +53,37 @@ void printMap(std::unordered_map <char, std::vector <std::string>> &contains) {
 	}
 }
 
-void solver(vector <int> result, map <char, vector <string>>& contains) {
-	cout << "Stuff's broke" << endl;
+bool solverMode() {
+	std::cout << "Run in solver mode?" << std::endl;
+	std::string answer = "";
+	while (answer != "yes" && answer != "no")
+	{
+		std::cin >> answer;
+		int i;
+		for (i = 0; i < answer.length(); i++) {
+			answer[i] = tolower(answer[i]);
+		}
+	}
+	if (answer == "yes") {
+		return true;
+	}
+	return false;
+}
+
+void solver(std::vector <int> result, std::unordered_map <char, std::vector <std::string>>& contains) {
+	std::cout << "Stuff's broke" << std::endl;
 }
 
 int randNum(int rollMax) {
-	random_device dev;
-	mt19937 rng(dev());
-	uniform_int_distribution<mt19937::result_type> dist(0, rollMax);
+	std::random_device dev;
+	std::mt19937 rng(dev());
+	std::uniform_int_distribution<std::mt19937::result_type> dist(0, rollMax);
 	return dist(rng);
 }
 
-string guess(vector <char> & viableLetters, map <char, vector<string>> & contains) {
-	string guess = "";
-	char rand1 = viableLetters[randNum(viableLetters.size())];
+std::string guess(std::vector <char> viableLetters, std::unordered_map <char, std::vector< std::string>> contains) {
+	std::string guess = "";
+	char rand1 = viableLetters[randNum(viableLetters.size()-1)];
 	int rand2 = randNum(contains[rand1].size());
 	guess = contains[rand1][rand2];
 	return guess;

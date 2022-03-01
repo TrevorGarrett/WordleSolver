@@ -20,15 +20,15 @@ void playConsoleGame(std::unordered_map <char, std::vector<std::string>> &contai
 
 
 // Solver Functions
-void assignMap(std::map <char, std::vector <std::string>> &contains); //takes in map and modifies it by assigning words in Words.txt to map
-void printMap(std::map <char, std::vector <std::string>> &contains);
+void assignMap(std::unordered_map <char, std::vector <std::string>> &contains); //takes in map and modifies it by assigning words in Words.txt to map
+void printMap(std::unordered_map <char, std::vector <std::string>> & contains);
 int randNum(int rollMax);
 
 //Troubleshoot following line:
 //I think it's because I'm calling contains and viableLetters as if I'm overwriting them, but am not within the function.  Revisit next time
-//string guess(std::vector <char>, std::map <char, std::vector<std::string>>);
+std::string guess(std::vector <char>, std::unordered_map <char, std::vector<std::string>>);
 
 
-void Solver(std::string guess, std::vector <int> result, std::unordered_map <char, std::vector <std::string>>& contains);
+//void solver(std::string guess, std::vector <int> result, std::unordered_map <char, std::vector <std::string>>& contains);
 void assignMap(std::unordered_map <char, std::vector <std::string>> &contains); //takes in map and modifies it by assigning words in Words.txt to map
 void printMap(std::unordered_map <char, std::vector <std::string>> &contains);

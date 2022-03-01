@@ -23,23 +23,6 @@ bool isValidWord(std::string word) {
 	return true; // FIXME check that word is in the dictionary
 }
 
-// 
-bool solverMode() {
-	cout << "Run in solver mode?" << endl;
-	string answer = "";
-	while (answer != "yes" && answer != "no") 
-	{
-		cin >> answer;
-		int i;
-		for (i = 0; i < answer.length(); i++) {
-			answer[i] = tolower(answer[i]);
-		}
-	}
-	if (answer == "yes") {
-		return true;
-	}
-	return false;
-}
 void playConsoleGame(std::unordered_map<char, std::vector<std::string>> &contains) {
 	std::string answer = generateAnswer(contains);
 	std::string guess = "";
@@ -81,7 +64,7 @@ void playConsoleGame(std::unordered_map<char, std::vector<std::string>> &contain
 			}
 		}
 		std::cout << std::endl;
-		Solver(guess, result, contains);
+		//solver(guess, result, contains);
 		guess = "";
 		answer_letters.clear();
 	}
