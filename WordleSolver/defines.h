@@ -1,3 +1,5 @@
+#define DEBUG_MODE 1
+
 #define CONSOLE_MODE 1
 #define OFFICIAL_MODE 2
 

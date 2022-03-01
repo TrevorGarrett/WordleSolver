@@ -3,17 +3,14 @@
 
 #include <iostream>
 #include <string>
-#include <map>
+#include <unordered_map>
 #include <vector>
 #include "defines.h"
 #include "Functions.h"
-using namespace std;
-#define DEBUG_MODE 0
-
 
 int main()
 {
-    map <char, vector <string>> contains;
+    std::unordered_map <char, std::vector <std::string>> contains;
     bool quit = false;
     int mode;
     string alphabet = "abcdefghijklmnopqrstuvwxyz"; // List of letters to initiate vector of allowable letters
@@ -24,8 +21,8 @@ int main()
     while (!quit) {
         mode = -1;
         while (mode != 1 && mode != 2) {
-            cout << "Mode Select (1 for console game, 2 for official): " << endl;
-            cin >> mode;
+            std::cout << "Mode Select (1 for console game, 2 for official): " << std::endl;
+            std::cin >> mode;
         }
         switch (mode) {
         case CONSOLE_MODE:
@@ -34,19 +31,18 @@ int main()
             #if DEBUG_MODE == 1
                printMap(contains);
             #endif // DEBUG_MODE 
-;
-            playConsoleGame();
+            playConsoleGame(contains);
             break;
         case OFFICIAL_MODE: // Official game
 
             break;
         }
-        cout << "q for quit" << endl;
-        string temp;
-        cin >> temp;
+        std::cout << "q for quit" << std::endl;
+        std::string temp;
+        std::cin >> temp;
         quit = (temp == "q");
     }
-    cout << "Thanks for playing" << endl;
+    std::cout << "Thanks for playing" << std::endl;
 }
 
 
