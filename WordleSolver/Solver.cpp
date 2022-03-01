@@ -81,7 +81,7 @@ int randNum(int rollMax) {
 	return dist(rng);
 }
 
-std::string guess(std::vector <char> viableLetters, std::unordered_map <char, std::vector< std::string>> contains) {
+std::string generateGuess(std::vector <char> viableLetters, std::unordered_map <char, std::vector< std::string>> contains) {
 	std::string guess = "";
 	char rand1 = viableLetters[randNum(viableLetters.size()-1)];
 	int rand2 = randNum(contains[rand1].size());

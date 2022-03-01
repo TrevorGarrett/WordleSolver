@@ -1,4 +1,5 @@
 #define DEBUG_MODE 0
+#define DEBUG_MAP 0
 
 #define CONSOLE_MODE 1
 #define OFFICIAL_MODE 2

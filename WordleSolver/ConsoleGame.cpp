@@ -8,7 +8,6 @@
 
 std::string generateAnswer(std::unordered_map<char, std::vector<std::string>> &contains) {
 	std::string answer;
-	std::cout << contains.size() << std::endl;
 	auto iterator = contains.begin();
 	std::advance(iterator, rand()%contains.size());
 	int bucket_size = iterator->second.size();
@@ -23,19 +22,25 @@ bool isValidWord(std::string word) {
 	return true; // FIXME check that word is in the dictionary
 }
 
-void playConsoleGame(std::unordered_map<char, std::vector<std::string>> &contains) {
+void playConsoleGame(std::vector<char>& viableLetters, std::unordered_map<char, std::vector<std::string>> &contains) { //FIXME need to remove letters from viableLetters, should this happen in solver?
 	std::string answer = generateAnswer(contains);
 	std::string guess = "";
 	std::unordered_map <char, int> answer_letters;
 	std::vector<int> result(5,0); // Result format : 0 = Not there, 1 = Wrong position, 2 = Correct
+	bool solver_mode = solverMode();
 	int i, j; 
 	for (i = 0;i < NUM_GUESSES;i++) {
 		for (j = 0;j < WORD_SIZE; j++) {
 			answer_letters[answer[j]]++; // Keep hashmap of letters that are available for scoring guesses
 		}
-		while (guess.size() != 5 || !isValidWord(guess)) {	// Loop until input is 5 letter word that exists in our dictionary
-			std::cout << "Enter valid 5 letter word: " << std::endl;
-			std::cin >> guess;
+		if (solver_mode) {
+			guess = generateGuess(viableLetters, contains);
+		}
+		else {
+			while (guess.size() != 5 || !isValidWord(guess)) {	// Loop until input is 5 letter word that exists in our dictionary
+				std::cout << "Enter valid 5 letter word: " << std::endl;
+				std::cin >> guess;
+			}
 		}
 		for (j = 0;j < WORD_SIZE;j++) {
 			guess[j] = tolower(guess[j]); // Convert all words to lowercase
