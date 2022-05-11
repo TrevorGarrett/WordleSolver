@@ -1,0 +1,21 @@
+mullvad: 5502545782555583
+
+http://worldtx2zjdrxwwdvthuilhadqyfcl3fqgyjddhtakq3j4fonppvy3id.onion/
+
+WM: pinklemonade5309
+    portablepotato
+withdraw: 589347
+
+Sam: BM-2cXqV4cjFy1u2QSHjVXp5JQnm5uxtN5oBp
+For anyone who decides to message me start off by sending your public pgp key in plain text & make your public gpg key, so that the bit amount is 4096
+when you remake/create your new public & private pgp key there should be a data field to increase the bit amount
+make it the maximum which i believe should be 4096. also do not use ure real email address when creating ure public pgp key, as it will be visible to anyone who imports ure key.
+
+
+MdhxDlQkjHtA6BwV72Tb5SXmrsi49uGpLqeKoJvRaNnP8gWy13EOFYU0czfI
+
+Wallet Stuff
+=====
+inundate justice spying nasty knowledge adrenalin gadget obliged soapy ashtray waffle when gained dauntless zapped lazy earth knee cohesive owls pledge launching welders against owls
+2558000
+=====

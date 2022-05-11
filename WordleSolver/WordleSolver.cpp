@@ -5,19 +5,21 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <time.h>
 #include "defines.h"
 #include "Functions.h"
+#include "Game.h"
 
 int main()
 {
-    std::unordered_map <char, std::vector <std::string>> contains;
+    unsigned int seed = (unsigned int)time(NULL);
+    srand(seed); // Set random seed based on system time
+#if DEBUG_MODE == 1
+    std::cout << "Seed is: " << seed << std::endl;
+#endif
+    Game* game = new Game("Words.txt");
     bool quit = false;
     int mode;
-    std::string alphabet = "abcdefghijklmnopqrstuvwxyz"; // List of letters to initiate vector of allowable letters
-    std::vector <char> viableLetters; // vector of allowable letters.  This vector will be edited to remove letters no found in words to allow for the random guesser to pick words that adhere to any omissions made
-    for (int i = 0; i < alphabet.length(); i++) {
-        viableLetters.push_back(alphabet[i]);
-    }
     while (!quit) {
         mode = -1;
         while (mode != 1 && mode != 2) {
@@ -26,14 +28,13 @@ int main()
         }
         switch (mode) {
         case CONSOLE_MODE:
-            assignMap(contains);
             #if DEBUG_MODE == 1
-                std::cout << generateGuess(viableLetters, contains) << std::endl;   
+                std::cout << game->generateGuess() << std::endl;   
             #endif
             #if DEBUG_MAP == 1
-               printMap(contains);
+               game->printContains();
             #endif // DEBUG_MODE 
-            playConsoleGame(viableLetters, contains);
+            playConsoleGame(game);
             break;
         case OFFICIAL_MODE: // Official game
 
@@ -43,6 +44,9 @@ int main()
         std::string temp;
         std::cin >> temp;
         quit = (temp == "q");
+        if (!quit) {
+            game->resetGame("Words.txt");
+        }
     }
     std::cout << "Thanks for playing" << std::endl;
 }
